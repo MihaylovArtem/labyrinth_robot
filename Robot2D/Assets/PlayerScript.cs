@@ -21,7 +21,6 @@ public class PlayerScript : MonoBehaviour {
     void Start() {
         leftWheelRigidBody = leftWheel.GetComponent<Rigidbody2D>();
         rightWheelRigidBody = rightWheel.GetComponent<Rigidbody2D>();
-        thisRigidBody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -34,5 +33,9 @@ public class PlayerScript : MonoBehaviour {
             leftWheelRigidBody.velocity = leftWheel.transform.up * maxSpeed * LeftPower / 100;
             rightWheelRigidBody.velocity = rightWheel.transform.up * maxSpeed * RightPower / 100;
         }
+
+		Camera.main.transform.position = new Vector3 (gameObject.transform.position.x, 
+		                                              gameObject.transform.position.y, 
+		                                              -20);
     }
 }
