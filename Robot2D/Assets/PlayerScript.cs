@@ -11,11 +11,11 @@ public class PlayerScript : MonoBehaviour {
     public int RightPower;
     [Range(-100, 100)]
     public int BothPower;
+
     public bool isConnected;
 
     private Rigidbody2D leftWheelRigidBody;
     private Rigidbody2D rightWheelRigidBody;
-    private Rigidbody2D thisRigidBody;
 
     // Use this for initialization
     void Start() {
