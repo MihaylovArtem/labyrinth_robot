@@ -9,6 +9,9 @@ public class PlayerScript : MonoBehaviour {
     public int LeftPower;
     [Range(-100, 100)]
     public int RightPower;
+    [Range(-100, 100)]
+    public int BothPower;
+    public bool isConnected;
 
     private Rigidbody2D leftWheelRigidBody;
     private Rigidbody2D rightWheelRigidBody;
@@ -23,7 +26,13 @@ public class PlayerScript : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        leftWheelRigidBody.velocity = leftWheel.transform.up * maxSpeed * LeftPower / 100;
-        rightWheelRigidBody.velocity = rightWheel.transform.up * maxSpeed * RightPower / 100;
+        if (isConnected) {
+            leftWheelRigidBody.velocity = leftWheel.transform.up * maxSpeed * BothPower / 100;
+            rightWheelRigidBody.velocity = rightWheel.transform.up * maxSpeed * BothPower / 100;
+        }
+        else {
+            leftWheelRigidBody.velocity = leftWheel.transform.up * maxSpeed * LeftPower / 100;
+            rightWheelRigidBody.velocity = rightWheel.transform.up * maxSpeed * RightPower / 100;
+        }
     }
 }
