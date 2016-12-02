@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 1af91b537d4478e4abcbb69027c6d952
+timeCreated: 1480693701
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - leftWheel: {fileID: 1000010931438366, guid: 0c80e10be4b6b41b39a919c8b79d8e58,
+      type: 2}
+  - rightWheel: {fileID: 1000011015376144, guid: 0c80e10be4b6b41b39a919c8b79d8e58,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

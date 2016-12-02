@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: e527c6d35da8e8b41bf32856e0135cf6
+timeCreated: 1480693666
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - checkBox: {fileID: 114000010650828424, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - player: {fileID: 114000013281539692, guid: 0c80e10be4b6b41b39a919c8b79d8e58, type: 2}
+  - leftSlider: {fileID: 114000012900353122, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - rightSlider: {fileID: 114000013923150734, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - bothSlider: {fileID: 114000013775548984, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - forwardBothButton: {fileID: 1000010678718738, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - forwardLeftButton: {fileID: 1000013353935806, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - forwardRightButton: {fileID: 1000010612685694, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - backBothButton: {fileID: 1000013913172512, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - backLeftButton: {fileID: 1000014224180256, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  - backRightButton: {fileID: 1000010673065234, guid: 62a4e0a5309374a7ca877860cbeb417a,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
