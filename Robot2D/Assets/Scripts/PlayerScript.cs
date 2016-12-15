@@ -20,21 +20,77 @@ public class PlayerScript : MonoBehaviour {
 	private Rigidbody2D leftWheelRigidBody;
     private Rigidbody2D rightWheelRigidBody;
 
+	//private Vector3 beforeRotation = new Vector3 (0, 0, 0);
+	public Vector3 afterRotation = new Vector3 (0, 0, 0);
+	public bool isTurning;
+
     // Use this for initialization
     void Start() {
-        leftWheelRigidBody = leftWheel.GetComponent<Rigidbody2D>();
+		//isTurning = true;
+		afterRotation = new Vector3 (transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z + 90);
+	    leftWheelRigidBody = leftWheel.GetComponent<Rigidbody2D>();
         rightWheelRigidBody = rightWheel.GetComponent<Rigidbody2D>();
     }
 
 	// Update is called once per frame
-	void FixedUpdate ()
+	void FixedUpdate () {
+		//updateVelocityWithConnected (isConnected);
+		leftWheelRigidBody.velocity = leftWheelSpeed * leftWheel.transform.up;
+		rightWheelRigidBody.velocity = rightWheelSpeed * rightWheel.transform.up;
+
+		//if (isTurning) {
+		//	rotateLeft ();
+		//}
+
+	}
+
+	public void rotateLeft() {
+		if (transform.rotation.eulerAngles.z < afterRotation.z) {
+			LeftPower = -50;
+			RightPower = 50;
+		} else {
+			LeftPower = 0;
+			RightPower = 0;
+			isTurning = false;
+			Quaternion rot = transform.rotation;
+			rot.eulerAngles = new Vector3 (afterRotation.x, afterRotation.y, afterRotation.z);
+			transform.rotation = rot;
+		}
+	}
+
+	public void rotateRight ()
 	{
-		updateVelocityWithConnected (isConnected);
-		leftWheelRigidBody.velocity = leftWheelSpeed*leftWheel.transform.up;
-		rightWheelRigidBody.velocity = rightWheelSpeed*leftWheel.transform.up;
-		Camera.main.transform.position = new Vector3 (gameObject.transform.position.x,
-													  gameObject.transform.position.y,
-													  -20);
+		if (transform.rotation.eulerAngles.z > afterRotation.z) {
+			LeftPower = 50;
+			RightPower = -50;
+		} else {
+			LeftPower = 0;
+			RightPower = 0;
+			isTurning = false;
+			Quaternion rot = transform.rotation;
+			rot.eulerAngles = new Vector3 (afterRotation.x, afterRotation.y, afterRotation.z);
+			transform.rotation = rot;
+		}
+	}
+
+	public void rotateAround ()
+	{
+		if (transform.rotation.eulerAngles.z > afterRotation.z) {
+			LeftPower = 50;
+			RightPower = -50;
+		} else {
+			LeftPower = 0;
+			RightPower = 0;
+			isTurning = false;
+			Quaternion rot = transform.rotation;
+			rot.eulerAngles = new Vector3 (afterRotation.x, afterRotation.y, afterRotation.z);
+			transform.rotation = rot;
+		}
+	}
+
+	public void moveForward () {
+		LeftPower = 100;
+		RightPower = 100;
 	}
 
 	public void updateVelocityWithConnected (bool connected) {
